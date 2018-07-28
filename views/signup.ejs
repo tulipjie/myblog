@@ -1,0 +1,46 @@
+<%- include('header')%>
+
+<div class="ui grid">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form  method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>用户名</label>
+                <input placeholder="用户名" class="form-control" type="text" name="name">
+            </div>
+            <div class="form-group">
+                <label>密码</label>
+                <input placeholder="密码" class="form-control" type="password" name="password">
+            </div>
+            <div class="form-group">
+                <label>重复密码</label>
+                <input placeholder="重复密码" class="form-control" type="password" name="repassword">
+            </div>
+            <div class="form-group">
+                <label>性别</label>
+                <select class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" name="gender">
+                    <option value="m">男</option>
+                    <option value="f">女</option>
+                    <option value="x">保密</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>角色</label>
+                <select class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" name="role">
+                    <option value="u">用户</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>头像</label>
+                <input type="file" name="avatar">
+            </div>
+            <div class="form-group">
+                <label>个人简历</label>
+                <textarea name="bio" class="form-control" rows="5" v-model="user.bio"></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary btn-block" value="注册">
+        </form>
+    </div>
+
+</div>
+<%- include('footer')%>

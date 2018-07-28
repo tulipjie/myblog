@@ -1,0 +1,24 @@
+<div class="nav-setting">
+    <div class="ui button">
+        <div class="ui floating dropdown button">
+            <i class="icon bars"></i>
+            <div class="menu">
+                <% if (user&&(user.role=='a'||user.role=='s')){ %>
+                <a class="item" href="/posts">首页</a>
+                <div class="divider"></div>
+                <a class="item" href="/admin">用户管理</a>
+                <a class="item" href="/signout">登出</a>
+                <% }else if (user&&user.role=='u'){%>
+                <a class="item" href="/posts?author=<%= user._id%>">个人主页</a>
+                <div class="divider"></div>
+                <a class="item" href="/posts/create">发表文章</a>
+                <a class="item" href="/signout">登出</a>
+                <% }else if(!user){%>
+                <a class="item" href="/signin">用户登录</a>
+                <a class="item" href="/signup">用户注册</a>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+</div>

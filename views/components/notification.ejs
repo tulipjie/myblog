@@ -1,0 +1,14 @@
+<div clas="ui grid">
+    <div class="four wide colomn"></div>
+    <div class="eight wide column">
+        <% if (success) { %>
+        <div class="ui success message">
+            <p><%= success %></p>
+        </div>
+        <% }else {%>
+        <div class="ui error message">
+            <p><%= error %></p>
+        </div>
+        <% }%>
+    </div>
+</div>

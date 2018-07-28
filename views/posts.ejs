@@ -1,0 +1,32 @@
+<%- include('header') %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <section class="sidebar">
+                <span > <h3>文章列表</h3></span>
+            </section>
+                <% posts.forEach(function (post) { %>
+                <%- include('components/post-content', { post: post }) %>
+                <% }) %>
+
+        </div>
+        <div class="col-md-4">
+            <section class="sidebar">
+                <span><h3>友情链接</h3></span>
+                <h5>Font Awesome 字体:<a href="http://fontawesome.io/"> http://fontawesome.io/</a></h5>
+                <h5>Bootstrap中文网:<a href="http://www.bootcss.com/"> http://www.bootcss.com/</a></h5>
+                <h5>Node.js中文网:<a href="https://nodejs.org/zh-cn/"> https://nodejs.org/zh-cn/</a></h5>
+            </section>
+            <section class="sidebar sidebar-connect">
+                <span><h3>联系我们</h3></span>
+                <div class="cp-contancts">
+                    <p>代码编写过程中借鉴了一些其他开源插件，主要来自jQuery之家和Github。如果你对这个主题有什么意见或是其他想法，可以通过一下方式联系我们：</p>
+                    <p class="sidebar-email" ><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="#">zhongjiejiejiejie@163.com</a></p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+<%- include('components/page2') %>
+<%- include('footer') %>

@@ -1,0 +1,31 @@
+
+<%- include('layout')%>
+<ol class="breadcrumb">
+    <li><a href="/admin">管理首页</a></li>
+    <li><span>用户列表</span></li>
+</ol>
+<h3>用户列表</h3>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>性别</th>
+        <th>身份</th>
+        <th>个人简介</th>
+
+    </tr>
+    <% users.forEach(function (user) {%>
+    <tr>
+        <th><%= user.name%></th>
+        <th><%= user.password%></th>
+        <th><%= user.gender%></th>
+        <th><%= user.role%></th>
+        <th><%= user.bio%></th>
+        <% if (user&&(user.role=='a'||user.role=='u')) { %>
+        <th><a href="/admin/<%= user._id %>/remove">删除</a></th>
+        <%}%>
+    </tr>
+   <%  }) %>
+</table>
+<%- include('page')%>
+<%- include('../footer')%>
